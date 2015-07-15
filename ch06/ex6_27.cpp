@@ -1,17 +1,33 @@
+//another way to do it
 #include <iostream>
+#include <string>
 #include <initializer_list>
+using namespace std;
 
-int sum(std::initializer_list<int> const& il)
-{
-    int sum = 0;
-    for (auto i : il) sum += i;
-    return sum;
+
+int allsum(initializer_list<int> inls){
+
+int res;
+for(auto beg=inls.begin();beg!=inls.end();++beg)
+     res += *beg;
+
+
+return res;
+
+
+
 }
 
-int main(void)
-{
-    auto il = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    std::cout << sum(il) << std::endl;
 
-    return 0;
+
+
+int main() {
+
+auto inls{1,2,3,4,5};
+
+auto ret = allsum(inls);
+cout << " Teliko : "<<ret<<endl;
+
+
+   return 0;
 }
